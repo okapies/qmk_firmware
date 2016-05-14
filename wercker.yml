@@ -1,5 +1,5 @@
 box: 
-  id: ymotongpoo/ubuntu-trusty:wercker
+  id: okapies/qmk_firmware:latest
 
 build:
   steps:
