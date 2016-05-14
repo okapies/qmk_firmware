@@ -1,0 +1,47 @@
+# Teensy build sample
+#
+# VERSION             0.1.0
+
+FROM ubuntu:trusty
+MAINTAINER Yuta Okamoto <okapies@gmail.com>
+
+# Set variables for user configuration.
+ARG REPO_URL
+ARG KEYMAP
+ENV REPO_URL "https://github.com/okapies/qmk_firmware"
+ENV KEYMAP default
+ENV PATH /home/ergodox:$PATH
+
+# For installation setting.
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install required pacakges for AVR cross compilation.
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y \
+  build-essential \
+  gcc \
+  unzip \
+  wget \
+  zip \
+  gcc-avr \
+  binutils-avr \
+  avr-libc \
+  dfu-util \
+  dfu-programmer \
+  git-core \
+  curl \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
+
+# Create generic user.
+RUN mkdir /home/ergodox
+RUN mkdir /out
+RUN chmod 777 /home/ergodox
+
+# Clone 
+WORKDIR /home/ergodox
+COPY build.sh .
+RUN chmod 755 build.sh
+
+# set entrypoint
+ENTRYPOINT ["build.sh"]
