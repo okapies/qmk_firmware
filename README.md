@@ -1,3 +1,12 @@
+# Build status
+Maintained by [@okapies](https://github.com/okapies)
+
+[![wercker status](https://app.wercker.com/status/2f02377cbfb88cdb7c966cfc8563a365/m "wercker status")](https://app.wercker.com/project/bykey/2f02377cbfb88cdb7c966cfc8563a365)
+
+[![Download firmware](https://api.bintray.com/packages/okapies/generic/ergodox.hex/images/download.svg)](https://bintray.com/okapies/generic/ergodox.hex/_latestVersion)
+
+Thanks to the @ymotongpoo's great [blog post](http://ymotongpoo.hatenablog.com/entry/2016/04/24/232452).
+
 # Quantum Mechanical Keyboard Firmware
 
 This is a keyboard firmware based on the [tmk_keyboard firmware](http://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR controllers, and more specifically, the [OLKB product line](http://olkb.co), the [ErgoDox EZ](http://www.ergodox-ez.com) keyboard, and the [Clueboard product line](http://clueboard.co/).
