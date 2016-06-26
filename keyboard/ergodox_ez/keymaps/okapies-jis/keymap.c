@@ -55,13 +55,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * | PrScr  |  F1  |  F2  |  F3  |  F4  |  F5  |      |           |      |  F6  |  F7  |  F8  |  F9  |  F10 |   Del  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | ScrLk  |      |      |      |      |      |      |           |      |      |   7  |   8  |   9  |   *  |   F11  |
+ * | ScrLk  |      |      |      |      |      |      |           |      |      |      |  Up  |      |      |   F11  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | Pause  |      |      |      |      |      |------|           |------|      |   4  |   5  |   6  |   +  |   F12  |
+ * | Pause  |      |      |      |      |      |------|           |------|      | Left | Down | Right|      |   F12  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |           |      |      |   1  |   2  |   3  |   /  | Enter  |
+ * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |      |      |      |      |                                       |      |   .  |   0  |   =  |      |
+ *   |      |      |      |      |      |                                       |      |      |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | Ins  |      |       |      |      |
@@ -84,10 +84,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_TRNS,KC_TRNS,KC_TRNS,
        // right hand
        KC_TRNS, KC_F6,   KC_F7,  KC_F8,   KC_F9,   KC_F10,  KC_DELT,
-       KC_TRNS, KC_TRNS, KC_P7,  KC_P8,   KC_P9,   KC_PAST, KC_F11,
-                KC_TRNS, KC_P4,  KC_P5,   KC_P6,   KC_PPLS, KC_F12,
-       KC_TRNS, KC_TRNS, KC_P1,  KC_P2,   KC_P3,   KC_PSLS, KC_PENT,
-                         KC_TRNS,KC_PDOT, KC_P0,   KC_PEQL, KC_TRNS,
+       KC_TRNS, KC_TRNS, KC_TRNS,KC_UP,   KC_TRNS, KC_TRNS, KC_F11,
+                KC_TRNS, KC_LEFT,KC_DOWN, KC_RGHT, KC_TRNS, KC_F12,
+       KC_TRNS, KC_TRNS, KC_TRNS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS
