@@ -1,3 +1,12 @@
+# Build status
+Maintained by [@okapies](https://github.com/okapies)
+
+[![wercker status](https://app.wercker.com/status/2f02377cbfb88cdb7c966cfc8563a365/m "wercker status")](https://app.wercker.com/project/bykey/2f02377cbfb88cdb7c966cfc8563a365)
+
+[![Download firmware](https://api.bintray.com/packages/okapies/generic/ergodox.hex/images/download.svg)](https://bintray.com/okapies/generic/ergodox.hex/_latestVersion)
+
+Thanks to the @ymotongpoo's great [blog post](http://ymotongpoo.hatenablog.com/entry/2016/04/24/232452).
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Build Status](https://travis-ci.org/jackhumbert/qmk_firmware.svg?branch=master)](https://travis-ci.org/jackhumbert/qmk_firmware)

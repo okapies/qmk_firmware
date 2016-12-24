@@ -1,0 +1,29 @@
+box:
+  id: okapies/qmk_firmware:latest
+
+build:
+  steps:
+    - script:
+        name: confirm docker image version.
+        code: |
+          cat /etc/lsb-release && uname -a
+    - script:
+        name: build default keymap.
+        cwd: $WERCKER_SOURCE_DIR/keyboards/ergodox/ez
+        code: |
+          make clean && make $TARGET_KEYMAP
+    - script:
+        name: move built firmware to output dir.
+        cwd: $WERCKER_SOURCE_DIR
+        code: |
+          mv .build/ergodox_ez_$TARGET_KEYMAP.hex $WERCKER_OUTPUT_DIR
+deploy:
+  steps:
+    - script:
+        name: put built hex file to bintray.
+        code: |
+          curl -T $WERCKER_SOURCE_DIR/ergodox_ez_$TARGET_KEYMAP.hex -u$BINTRAY_USERNAME:$BINTRAY_APIKEY https://api.bintray.com/content/$BINTRAY_USERNAME/generic/ergodox.hex/$WERCKER_GIT_BRANCH-${WERCKER_GIT_COMMIT:0:8}/ergodox_ez_$TARGET_KEYMAP-${WERCKER_GIT_COMMIT:0:8}.hex
+    - script:
+        name: publish uploaded hex file.
+        code: |
+          curl -X POST -u$BINTRAY_USERNAME:$BINTRAY_APIKEY https://api.bintray.com/content/$BINTRAY_USERNAME/generic/ergodox.hex/$WERCKER_GIT_BRANCH-${WERCKER_GIT_COMMIT:0:8}/publish
